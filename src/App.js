@@ -5,15 +5,20 @@ import { useState } from 'react';
 
 function App() {
   const [distance, setDistance] = useState()
+  const [height, setHeight] = useState()
   const [money, setMoney] = useState()
 
-  const calcMoney = (dist) => {
+  const calcMoney = (dist,height) => {
     if (dist < 0) {
       return
     }
+    if (height < 0) {
+      return
+    }
 
-    setMoney(Math.round(Math.abs(0.5 * dist + 10 * Math.sin(dist / 0.042 * 2 * Math.PI) + 2 * Math.cos(dist / 0.097 * 2 * Math.PI)) * 100) / 100)
+    setMoney(Math.round(Math.abs(0.04 * dist + 0.005*height + 10 * Math.sin(dist / 0.42 * 2 * Math.PI) + (3+height/1337) * Math.cos(height / 21 * 2 * Math.PI) ) * 20) / 20)
     setDistance(dist)
+    setHeight(height)
   }
 
   return (
@@ -25,8 +30,7 @@ function App() {
       <div >
         <InputBar onEnter={calcMoney} />
       </div>
-      {distance &&
-
+      {distance && height &&
         <div>
           <div>
             <h3 className='text'>You will recive:</h3>
