@@ -1,0 +1,41 @@
+:root {
+  --bg-color: #FAEDC6;
+  --color-1: #3E8E7E;
+  --color-2: #7CD1B8;
+  --color-3: #FABB51;
+  --text-color: black;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-color);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--color-2);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.InputBar {
+  color: var(--text-color);
+  background: var(--bg-color);
+  border: 5px solid var(--color-2);
+  width: 100%;
+  height: 40px;
+  font-size: 17px;
+}
